@@ -1,0 +1,2 @@
+defmodule TAuthProxy do
+end
