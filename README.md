@@ -1,3 +1,5 @@
+## Deprecated. Please use tellerhq/iOS-SDK instead
+
 # TAuthProxy
 
 A simple proxy for developing mobile apps against [Teller](https://teller.io).
