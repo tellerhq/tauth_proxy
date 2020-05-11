@@ -25,21 +25,6 @@ defmodule TAuthProxy.ProxyServer do
     |> read(client)
   end
 
-  get "/auth/redirect" do
-    application_id = Application.fetch_env!(:tauth_proxy, :application_id)
-
-    permissions =
-      Application.fetch_env!(:tauth_proxy, :permissions)
-      |> Enum.map(fn({k,v}) -> "#{k}:#{v}" end)
-      |> Enum.join(",")
-    
-    url = @www <> "/auth/authorize?application_id=#{application_id}&permissions=#{permissions}"
-
-    conn
-    |> put_resp_header("Location", url)
-    |> send_resp(:found, "You are being redirected to #{url}")
-  end
-
   defp write(conn, client) do
     case read_body(conn, []) do
       {:ok, body, conn} ->
