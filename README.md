@@ -18,5 +18,4 @@ This project is intended as a demonstrative guide or starting point for how to b
 
 ## Endpoints
 
-- `/auth/redirect` - redirects users to the Teller hosted authorisation page for your application
 - `/api/*` - proxies everything to Teller via a TAuth mutally authenticated TLS connection, e.g. `/api/accounts` proxies to `https://api.teller.io/accounts`
